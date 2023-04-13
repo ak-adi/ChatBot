@@ -37,11 +37,11 @@ class ChatBotAdapter(private val context : Context, private val arraylist : Arra
         when(holder.itemViewType){
             ITEM_TYPE_USER->{
                 val userViewHolder = holder as UserViewHolder
-                userViewHolder.bindingUser.userText.setText(list.messages)
+                userViewHolder.bindingUser.userText.text = list.messages
             }
             ITEM_TYPE_BOT->{
                 val botViewHolder = holder as BotViewHolder
-                botViewHolder.bindingBot.botText.setText(list.messages)
+                botViewHolder.bindingBot.botText.text = list.messages
             }
         }
 

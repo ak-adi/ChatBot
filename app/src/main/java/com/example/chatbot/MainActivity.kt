@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.layoutManager = layoutManager
        arraylist = ArrayList<ChatsModel>()
         adapter= ChatBotAdapter(this,arraylist)
         binding.recyclerView.adapter = adapter
@@ -44,8 +47,9 @@ class MainActivity : AppCompatActivity() {
             getResponse(binding.msgEditText.text.toString())
             binding.msgEditText.setText("")
             it.hideKeyboard()
-
-
+            val newMessageIndex = 0
+            adapter.notifyItemInserted(newMessageIndex)
+            layoutManager.scrollToPosition(adapter.itemCount)
         }
 
     }

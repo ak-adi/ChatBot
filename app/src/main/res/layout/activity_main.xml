@@ -30,6 +30,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:layout_above="@+id/relativeEditTextLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolBar"
@@ -37,15 +38,16 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="2dp"
+        android:scrollbars="vertical"
         android:clipToPadding="false"
         app:stackFromEnd="true"
-        app:reverseLayout="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:reverseLayout="true"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeEditTextLayout">
 
         <EditText
             android:id="@+id/msgEditText"
